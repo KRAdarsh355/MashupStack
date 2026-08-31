@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+<body>
+    <p id="userr"></p>
+    <button onclick="result()">Admin Check</button>
+    <script>
+        let user={
+            name:"jojo",
+            age:25,
+            admin: true,
+        };
+        function result(){
+            let res=(user.age >=18 && user.admin)? "Access Granted":"Access Denied";
+            document.getElementById("userr").innerHTML=res;
+            console.log("age" in user);
+            delete user.age;
+            console.log(user)
+        }
+    </script>
+</body>
+</html>

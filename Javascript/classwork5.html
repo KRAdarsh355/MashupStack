@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Page</title>
+</head>
+<body>
+    <p id="ret"></p>
+    <button onclick="delivery()">Check Delivery</button>
+    <script>
+        let order={
+            itemName: 'Glass',
+            isDelivered: 'True',
+            daysSinceDelivery: '11',
+        };
+        function delivery(){
+            let del=(order.isDelivered && order.daysSinceDelivery <=7)? "Eligible for return":"Return period expired";
+            document.getElementById("ret").innerHTML=del;
+            console.log("itemName" in order);
+            delete order.daysSinceDelivery;
+            console.log(order);
+        }
+    </script>
+</body>
+</html>
