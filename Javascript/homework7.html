@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReminderTool</title>
+</head>
+<body>
+    <p id="helper1"></p>
+        <p id="helper2"></p>
+
+    <script>
+        let bday="2025-10-20"
+        let birth=new Date(bday)
+        let day=birth.getDate()
+        let year=birth.getFullYear()
+        let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        let month=months[birth.getMonth()]
+        document.getElementById("helper1").innerHTML= day +" "+month+" "+year;
+        let today=new Date()
+        let years= today.getFullYear() - year;
+        let message=(years >=1)?"It has been more than a year since that date.":"It has been less than a year since that date."
+        document.getElementById("helper2").innerHTML=message;
+    </script>
+</body>
+</html>

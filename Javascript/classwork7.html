@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BirthdayTracker</title>
+</head>
+<body>
+    <p id="live"></p>
+    <script>
+        let friend ={ name:"Robert",birthDate:"2000-08-20"};
+        function getBirthdayDetails(obj){
+            let Bdaydate=new Date(obj.birthDate)
+            let day=Bdaydate.getDate()
+            let year=Bdaydate.getFullYear()
+            let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            let month=months[Bdaydate.getMonth()]
+            let today=new Date();
+            let age= today.getFullYear() - Bdaydate.getFullYear();   
+            document.getElementById("live").innerHTML= obj.name +" was born on "+ day+" "+ month+", "+ year+" and is "+age+" years old."
+
+        }
+        getBirthdayDetails(friend)
+    </script>
+</body>
+</html>
