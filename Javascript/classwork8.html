@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Calc</title>
+</head>
+<body>
+    <h1>GroceryStore</h1>
+    
+    <p> 1:Apple - ₹30 per item <br>
+        2:Banana - ₹10 per item <br>
+        3:Mango - ₹50 per item</p>
+    <p id="helper"></p>
+    <script>
+        let aprice=30, bprice=10,mprice=50
+        let total=0
+        for(let i=0;i<5;i++){
+            let code=parseInt(prompt("Enter product code: 1 - Apple, 2 - Banana, 3 - Mango ="))
+            let qua=parseInt(prompt("Enter quantity in Kg ="))
+            
+            switch(code){
+                case 1:
+                    total+=aprice*qua;
+                    break;
+                case 2:
+                    total+=qua*bprice;
+                    break;
+                case 3:
+                    total+=mprice*qua;
+                    break;
+                default:
+                    document.write("Invalid input.")
+                    continue;
+            }
+        }
+        if (total>100){
+            document.getElementById("helper").innerHTML="High purchase.";
+
+        }
+        else{
+            document.getElementById("helper").innerHTML="Normal purchase.";
+
+        }
+
+    </script>
+</body>
+</html>
