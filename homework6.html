@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Student Result Dashboard</h1>
+    <p>Student Names:</p>
+    <p id="name"></p>
+    <p>Students with score above 60:</p>
+    <p id="60plus"></p>
+    <p>Total score of all students:</p>
+    <p id="totalscore"></p>
+    <p>Did all the students pass?</p>
+    <p id="abv35"></p>
+    <p>Did anyone score above 90?</p>
+    <p id="abv90"></p>
+    <p>Names and scores in descending order:</p>
+    <p id="desc"></p>
+    <script>
+        let student=[{name:"Patrick Jane",score:95},{name:"Rick Grimes",score:70},{name:"Kirk",score:30},{name:"Jimmy McNulty",score:59},{name:"Walter White",score:91}]
+        student.forEach(function(value){
+            document.getElementById("name").innerHTML+= value.name+"<br>";
+        })
+        let sixtyplus=student.filter(function(value){
+            return (value.score)>60
+        }).map(function(value){
+            return value.name
+        })
+        sixtyplus.forEach(function(value){
+                    document.getElementById("60plus").innerHTML+= value+"<br>";
+        })
+        let total=0
+        let scores=student.map(function(value){
+            return value.score
+        }).forEach(function(value){
+                total+=value
+        })
+        document.getElementById("totalscore").innerHTML=total;
+        let pass=student.every(function(value){
+            return value.score>35
+        })
+        document.getElementById("abv35").innerHTML=pass;
+        let topper=student.some(function(value){
+            return value.score>90
+        })
+        document.getElementById("abv90").innerHTML=topper;
+        student.sort(function(a,b){
+            return b.score-a.score
+        })
+        student.forEach(function(value){
+            document.getElementById("desc").innerHTML+=value.name+" = "+value.score+"<br>";
+        })
+    </script>
+</body>
+</html>

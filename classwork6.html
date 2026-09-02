@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroceryListing</title>
+</head>
+<body>
+    <h2>Grocery Listing</h2>
+    <p>LIST</p>
+    <p id="helper1"></p>
+    <p id="helper2"></p>
+    <p>UPDATED LIST</p>
+    <p id="helper3"></p>
+    <script>
+        let product=["Apple","Lychy","Mango","Kiwi"]
+        let price=[20,60,50,80]
+        product.forEach(function(item,index){
+           document.getElementById("helper1").innerHTML+=("Product: "+item+" -  Price: "+price[index]+"<br>") ;       
+        })
+        let abv50=product.filter(function(value,index){
+            return price[index]>50
+        })
+        document.getElementById("helper2").innerHTML=abv50;
+        product.push("Watermelon")
+        price.push(80)
+        
+        product.forEach(function(item,index){
+           document.getElementById("helper3").innerHTML+=("Product: "+item+" -  Price: "+price[index]+"<br>") ;       
+        })  
+    </script>
+</body>
+</html>
