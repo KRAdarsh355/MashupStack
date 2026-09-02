@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Filtering</title>
+</head>
+<body>
+    <p> "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.</p>
+    <P id="helper1"></P>
+    <P id="helper2"></P>
+    <p id="helper3"></p>
+    <script>
+        let str= "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great."
+        function purify(value){
+                let counter,i,counter2
+                let swears=/bad|ugly|stupid/gi
+                let str2=value.replace(swears,"***")
+                document.getElementById("helper1").innerHTML=str2
+                let nums=value.match(/[0-9]/g)
+                counter=nums.length
+                let caps=value.match(/[A-Z]\w*/g)
+                counter2=caps.length
+                document.getElementById("helper2").innerHTML="The amount of numbers mentioned in the comment are:"+counter;
+                document.getElementById("helper3").innerHTML="The amount of Capital lettered words mentioned in the comment are:"+counter2;
+        }
+        purify(str)
+    </script>
+</body>
+</html>
