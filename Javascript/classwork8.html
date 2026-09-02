@@ -11,35 +11,44 @@
     <p> 1:Apple - ₹30 per item <br>
         2:Banana - ₹10 per item <br>
         3:Mango - ₹50 per item</p>
-    <p id="helper"></p>
+    <p id="helper1"></p>
+    <p id="helper2"></p>
+
     <script>
-        let aprice=30, bprice=10,mprice=50
-        let total=0
-        for(let i=0;i<5;i++){
+        let aprice=30, bprice=10,mprice=50,n=5
+        let total=0,atotal=0,btotal=0,mtotal=0
+    
+        for(let i=0;i<n;i++){
             let code=parseInt(prompt("Enter product code: 1 - Apple, 2 - Banana, 3 - Mango ="))
             let qua=parseInt(prompt("Enter quantity in Kg ="))
             
             switch(code){
                 case 1:
-                    total+=aprice*qua;
+                    atotal+=aprice*qua;
+
                     break;
                 case 2:
-                    total+=qua*bprice;
+                    btotal+=qua*bprice;
                     break;
                 case 3:
-                    total+=mprice*qua;
+                    mtotal+=mprice*qua;
                     break;
                 default:
-                    document.write("Invalid input.")
+                    document.write("Invalid input.<br>")
+                    n++
                     continue;
+            
             }
         }
+        total=atotal+btotal+mtotal
+        document.getElementById("helper2").innerHTML= "Total apple price="+atotal+ "<br>Total banana price="+btotal+"<br>Total mango price="+mtotal+"<br>Total purchase="+total;
+
         if (total>100){
-            document.getElementById("helper").innerHTML="High purchase.";
+            document.getElementById("helper1").innerHTML="High purchase.";
 
         }
         else{
-            document.getElementById("helper").innerHTML="Normal purchase.";
+            document.getElementById("helper1").innerHTML="Normal purchase.";
 
         }
 
