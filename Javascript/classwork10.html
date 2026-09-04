@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user='{"name":"Chrollo","email":"hxh123@hotmail.com","message":"Hey,I think I have an illness."}'
+        try{
+            let objUser=JSON.parse(user)
+            console.log(objUser);
+            let Message = ()=>{           
+                console.log("Message received from"+objUser.name)
+            }   
+            Message()
+        }
+        catch(err){
+                console.log("JSON is broken")
+        }
+        
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userFeedback='{"message":"This was a very good experience,thank you."}'
+        try{
+            let objUF=JSON.parse(userFeedback)
+            let check=(value)=>{
+                let result=/thank/ig.test(value.message)
+                if (result){
+                    console.log("Positive feedback received.")
+                }
+                else{
+                    console.log("Feedback noted.")
+                }
+            }
+            check(objUF)
+        }
+        catch{
+            console.log("JSON is invalid")
+        }
+    </script>
+</body>
+</html>
