@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic User System</title>
+</head>
+<body>
+    <script>
+        class User{
+            constructor(name,age,email){
+                this.name=name
+                this.age=age
+                this.email=email
+            }
+            get Name(){
+                return this.name
+            }
+            get Age(){
+                return this.age
+            }
+            get Email(){
+                return this.email
+            }
+            set updateEmail(newEmail){
+                if(newEmail.includes("@")){
+                    this.email=newEmail
+                }
+            }
+        }
+        let user1=new User("Kirk",39,"kirkiversery1@gmail.com")
+        console.log(user1.Name,user1.Age,user1.Email)
+        user1.updateEmail="kirkonlygmail.com"
+        user1.updateEmail="kirkonly@gmail.com"
+        console.log(user1.Name,user1.Age,user1.Email)
+
+
+    </script>
+</body>
+</html>

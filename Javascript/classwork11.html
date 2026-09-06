@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book store</title>
+</head>
+<body>
+    <script>
+        class Book{
+            constructor(title,author,price){
+                this.title=title
+                this.author=author
+                this.price=price
+            }
+                get Title(){
+                    return this.title
+                }
+                get Author(){
+                    return this.author
+                }
+                
+                set Price(newPrice){
+                    if (typeof newPrice ==="number" && newPrice > 0){
+                        this.price=newPrice
+
+                    }
+                }
+            }
+
+        
+        let book1= new Book("The Devil and Miss Prym","Paulo Coelho",1499)
+        console.log(book1.Title,book1.Author,book1.price)
+        book1.Price=0
+        book1.Price=700
+        console.log(book1.Title,book1.Author,book1.price)
+    </script>
+</body>
+</html>
