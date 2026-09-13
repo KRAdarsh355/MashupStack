@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Draw</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <style>
+        body{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="display-3 text-light bg-danger text-center font-weight-bold">Lottery Draw</h1>
+        <div class="flex-column d-flex align-items-center">
+            <input type="button" class="btn btn-lg btn-danger mt-5" onclick="win()" value="Click to see the winner">
+            <h1 id="winner1" class="bg-light text-danger display-1 mt-5 font-weight-bolder"></h1>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+            Open modal
+            </button>
+            <div class="modal " id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>The winner is:</p>
+                    <p id="winner2"></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+    </div>
+    <script>
+        let lottery=[31,32,33,34,35,36,37,38,39,40]
+        function win(){
+            let rnd=Math.floor(Math.random()*lottery.length)
+            document.getElementById("winner1").innerHTML=lottery[rnd]
+            document.getElementById("winner2").innerHTML=lottery[rnd]
+            console.log(lottery[rnd]);
+            
+        }
+    </script>
+</body>
+</html>

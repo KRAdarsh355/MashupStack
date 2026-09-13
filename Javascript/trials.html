@@ -1,50 +1,15 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    function add(){
-      var x=4,y=6
-      return x+y
-    }
-    add()
-    console.log(x)
-    let arro= ()=> return "Hello";
-  </script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Change Image Example</title>
+</head>
 <body>
-
-<h2>JavaScript "this"</h2>
-
-<p>This example demonstrate that in Arrow Functions, the "this" keyword represents the object that owns the function, no matter who calls the function.</p>
-
-<p>Click the button to execute the "hello" function again, and you will see that "this" still  represents the window object.</p>
-
-<button id="btn">Click Me!</button>
-
-<p id="demo"></p>
-
-<script>
-var haii;
-
-haii = () => {
-  document.getElementById("demo").innerHTML += this;
-}
-
-//The window object calls the function:
-window.addEventListener("load", haii);
-
-//A button object calls the function:
-document.getElementById("btn").addEventListener("click", haii);
-</script>
-
+  <img id="myImage" src="https://a-z-animals.com/media/2022/09/shutterstock_2118427715-1024x711.jpg" width="200" height="200">
+  <button onclick="changeImage()">Change Image</button>
+  <script>
+    function changeImage() {
+      document.getElementById("myImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToNRDU9KYnAwlNsJvii7njscMkZtXd9i8wkg&s";
+    }
+  </script>
 </body>
 </html>

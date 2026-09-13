@@ -1,0 +1,44 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Assignment</title>
+</head>
+
+<body>
+
+    <form id="myForm">
+        <input type="text" id="inputText">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+
+        let form = document.getElementById("myForm");
+        let input = document.getElementById("inputText");
+        let output = document.getElementById("output");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            output.innerHTML = input.value;
+            output.style.color = "blue";
+
+        });
+
+        output.addEventListener("mouseover", function() {
+            output.style.color = "green";
+        });
+
+        output.addEventListener("mouseout", function() {
+            output.style.color = "blue";
+        });
+
+    </script>
+
+</body>
+</html>

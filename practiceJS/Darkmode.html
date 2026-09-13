@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+</head>
+<style>
+    .darkmode{
+        background-color: black;
+        color:pink;
+    }
+</style>
+<body>
+    <div id="container">
+        <h1 id="text">Hello World</h1>
+        <button id="button">Blacked</button>
+    </div>
+    <script>
+        let container=document.getElementById("container")
+        let text=document.getElementById("text")
+        let button=document.getElementById("button")
+        container.style.textAlign="center"
+        button.addEventListener("click",function(){
+            document.body.classList.toggle("darkmode")
+        })
+    </script>
+</body>
+</html>

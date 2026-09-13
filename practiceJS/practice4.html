@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice4</title>
+</head>
+<body>
+    <p>Finding the area of a traingle</p>
+    <p id="area"></p>
+    <script>
+        let s1=parseInt(prompt("Enter side1 length:"))
+        let s2=parseInt(prompt("Enter side2 length:"))
+        let s3=parseInt(prompt("Enter side3 length:"))
+        let sp=(s1+s2+s3)/2
+        let tarea=Math.sqrt(sp*(sp-s1)*(sp-s2)*(sp-s3))
+        document.getElementById("area").innerHTML=tarea
+    </script>
+</body>
+</html>

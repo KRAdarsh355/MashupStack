@@ -21,10 +21,11 @@
                 }
                 
                 set Price(newPrice){
-                    if (typeof newPrice ==="number" && newPrice > 0){
+                    if (newPrice!= isNaN(newPrice) && newPrice > 0){
                         this.price=newPrice
 
-                    }
+                    } 
+                    
                 }
             }
 
