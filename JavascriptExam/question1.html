@@ -37,17 +37,14 @@
             </div>
             <div class="row pl-md-5 justify-content-center">
                 <div class="col-md-5">
-                    <div class ="dropdown mt-3">
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Operators</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" id="add">+</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" id="sub">-</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" id="mult">*</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" id="divi">/</a>
-                        </div>
+                    <div class="form-group">
+                        <label for="op">Select operator:</label>
+                        <select class="form-control" id="op">
+                            <option>+</option>
+                            <option>-</option>
+                            <option>*</option>
+                            <option>/</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -58,13 +55,12 @@
             </div>
             <div class="row pl-md-5 justify-content-center">
                 <div class="col-md-5 mt-3">
-                    <input type="text" class="form-control" placeholder="Result" id="result">
+                    <p id="result" class="font-italic font-weight-bolder"></p>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        let operator=""
         let result
         function add(a,b){
             return a+b
@@ -79,38 +75,39 @@
             return a/b
         }
         function print(value){
-            document.getElementById("result").value=value;
+            if(typeof(value)==="number"){
+                document.getElementById("result").innerHTML=value.toFixed(2)
+            }
+            else{
+                document.getElementById("result").innerHTML=value
+
+            }
         }
-        document.getElementById("add").addEventListener("click",function(){
-            operator="+"
-        })
-        document.getElementById("sub").addEventListener("click",function(){
-            operator="-"
-        })
-        document.getElementById("mult").addEventListener("click",function(){
-            operator="*"
-        })
-        document.getElementById("divi").addEventListener("click",function(){
-            operator="/"
-        })
         document.getElementById("equal").addEventListener("click",function(){
             let num1=Number(document.getElementById("num1").value)
             let num2=Number(document.getElementById("num2").value)
-            if(operator==="+"){
-            result=add(num1,num2)
-        }
-        else if(operator==="-"){
-            result=subtract(num1,num2)
-        }
-        else if(operator==="*"){
-            result=multiply(num1,num2)
-        }
-        else if(operator==="/"){
-            result=divide(num1,num2)
-        }
-        print(result)
-        })
-        
+            let operator=document.getElementById("op").value
+            if(isNaN(num1)||isNaN(num2)){
+                result= "Please enter valid numbers."
+            }
+            else if(operator==="/" && num2==0){
+                result= "Cannot divide by zero"
+            }
+            else if(operator==="+"){
+                result=add(num1,num2)
+            }
+            else if(operator==="-"){
+                result=subtract(num1,num2)
+            }
+            else if(operator==="*"){
+                result=multiply(num1,num2)
+            }
+            else if(operator==="/"){
+                result=divide(num1,num2)
+            }
+            
+            print(result)
+            })
     </script>
 </body>
 </html>
