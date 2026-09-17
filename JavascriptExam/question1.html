@@ -90,22 +90,37 @@
             if(isNaN(num1)||isNaN(num2)){
                 result= "Please enter valid numbers."
             }
-            else if(operator==="/" && num2==0){
+            else if(operator==="/" && num2===0){
                 result= "Cannot divide by zero"
             }
-            else if(operator==="+"){
-                result=add(num1,num2)
+            // else if(operator==="+"){
+            //     result=add(num1,num2)
+            // }
+            // else if(operator==="-"){
+            //     result=subtract(num1,num2)
+            // }
+            // else if(operator==="*"){
+            //     result=multiply(num1,num2)
+            // }
+            // else if(operator==="/"){
+            //     result=divide(num1,num2)
+            // }
+            else {
+                switch(operator){
+                    case "+":
+                        result=add(num1,num2)
+                        break
+                    case "-":
+                        result=subtract(num1,num2)
+                        break
+                    case "*":
+                        result=multiply(num1,num2)
+                        break
+                    case "/":
+                        result=divide(num1,num2)
+                        break
+                }
             }
-            else if(operator==="-"){
-                result=subtract(num1,num2)
-            }
-            else if(operator==="*"){
-                result=multiply(num1,num2)
-            }
-            else if(operator==="/"){
-                result=divide(num1,num2)
-            }
-            
             print(result)
             })
     </script>
