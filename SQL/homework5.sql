@@ -1,3 +1,4 @@
+
 use mashup;
 create table books(id int,title text,author text,price int,stock int);
 insert into books values(1, 'The Alchemist', 'Paulo Coelho', 350, 50),
