@@ -1,0 +1,12 @@
+use mashup; 
+drop table Employee;
+create table Employee(id int primary key,`Name` varchar(20),Department varchar(20),`Leave` int);
+create table Exam(id int,Employee_id int,exam_status varchar(5),foreign key(Employee_id) references Employee(id));
+insert into Employee values(1,'Raju','Sales',1),(2,'Sangeetha','Sales',3),(3,'Vinay','Operations',8),(4,'Abey','Packing',2),(5,'Thomas','Packing',1),(6,'Muneer','Operations',7),(7,'Aparna','Sales',3),(8,'Abid','Operations',9),(9,'Fathima','Sales',11),(10,'Varghese','Operations',14);
+insert into Exam values(1,2,'Pass'),(2,5,'Fail'),(3,1,'Fail'),(4,8,'Pass'),(5,3,'Pass'),(6,1,'Pass'),(7,6,'Fail'),(8,9,'Pass'),(9,10,'Pass');
+select * from Employee where `Leave`>5 and department='sales';
+select count(*) as No_of_Employees from Employee where department='Operations';
+select Department,count(*) as No_of_Employees from Employee group by Department;
+select Department,sum(`Leave`) as No_of_Leaves from Employee group by Department having sum(`Leave`)>10;
+select `Name` from Employee left join Exam on Employee.id=Exam.Employee_id where Exam.exam_status='Pass';
+select `Name` from Employee left join Exam on Employee.id=Exam.Employee_id where Employee_id is null;
