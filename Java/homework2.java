@@ -1,4 +1,4 @@
-public package msjava;
+package msjava;
 
 public class BillingTool {
 
